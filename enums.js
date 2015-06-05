@@ -1,9 +1,12 @@
 (function (exports) {
     function copyOwnFrom(target, source) {
-        Object.getOwnPropertyNames(source).forEach(function(propName) {
-            Object.defineProperty(target, propName,
-                Object.getOwnPropertyDescriptor(source, propName));
-        });
+        if (typeof source === 'object') {
+            Object.getOwnPropertyNames(source).forEach(function(propName) {
+                Object.defineProperty(target, propName,
+                    Object.getOwnPropertyDescriptor(source, propName));
+            });
+        }
+        
         return target;
     }
     

@@ -12,6 +12,7 @@
     
     function Symbol(name, props) {
         this.name = name;
+        this.value = props;
         if (props) {
             copyOwnFrom(this, props);
         }
@@ -20,6 +21,10 @@
     /** We don’t want the mutable Object.prototype in the prototype chain */
     Symbol.prototype = Object.create(null);
     Symbol.prototype.constructor = Symbol;
+    
+    Symbol.prototype.toSource = function () {
+        return this.value;
+    }
     /**
      * Without Object.prototype in the prototype chain, we need toString()
      * in order to display symbols.

@@ -1,3 +1,5 @@
 {
-    "main": "enums.js"
+    "name": "enums",
+    "main": "enums.js",
+    "version": "1.0.0"
 }

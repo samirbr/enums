@@ -22,7 +22,7 @@
     Symbol.prototype = Object.create(null);
     Symbol.prototype.constructor = Symbol;
     
-    Symbol.prototype.toSource = function () {
+    Symbol.prototype.toValue = function () {
         return this.value;
     }
     /**
